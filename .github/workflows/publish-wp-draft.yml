@@ -7,6 +7,9 @@ on:
         description: HTML or Markdown file to create as a WordPress draft
         required: true
         default: public/yyc-sefure.html
+  push:
+    paths:
+      - .github/wp-draft-trigger.txt
 
 defaults:
   run:
@@ -19,6 +22,7 @@ jobs:
       WP_BASE_URL: ${{ secrets.WP_BASE_URL }}
       WP_USERNAME: ${{ secrets.WP_USERNAME }}
       WP_APP_PASSWORD: ${{ secrets.WP_APP_PASSWORD }}
+      ARTICLE_PATH: ${{ inputs.article_path || 'public/yyc-sefure.html' }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -32,4 +36,4 @@ jobs:
         run: npm install
 
       - name: Create WordPress draft
-        run: npm run wp:draft -- "${{ inputs.article_path }}"
+        run: npm run wp:draft -- "$ARTICLE_PATH"
