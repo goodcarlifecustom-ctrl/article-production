@@ -31,7 +31,7 @@ WP_APP_PASSWORD
 
 `WP_BASE_URL` は `https://www.atarijo.com/media` を指定します。`WP_APP_PASSWORD` はコードやREADMEには書かず、Secretsにだけ保存してください。
 
-登録後、`Actions` → `Publish WordPress Draft` → `Run workflow` を開き、`article_path` に `public/yyc-sefure.html` を指定して実行します。投稿スクリプトはWordPressの投稿ステータスを必ず `draft` にして作成します。
+登録後、`Actions` → `Create WordPress Draft` → `Run workflow` を開き、`article_path` に `public/yyc-sefure.html` を指定して実行します。投稿スクリプトはWordPressの投稿ステータスを必ず `draft` にして作成します。
 
 ## 注意
 
